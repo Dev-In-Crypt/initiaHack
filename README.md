@@ -29,6 +29,7 @@ cd frontend && npm install && npm run dev
 ## Initia Hackathon Submission
 
 - **Project Name**: Smart Yield Vaults
+- **Demo video**: https://youtu.be/cd49jNYWVvo
 - **Vault contract**: `0x6aed4975e5b0180f54899d46e57537ce449f07de`
 - **Native feature**: Interwoven Bridge via InterwovenKit
 

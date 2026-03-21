@@ -1,7 +1,7 @@
 {
   "project_name": "Smart Yield Vaults",
   "repo_url": "https://github.com/Dev-In-Crypt/initiaHack",
-  "commit_sha": "9457f8e728f1deae062dd469f23593d96d1a202a",
+  "commit_sha": "38107854fe0ae12f3f793de69e5a87074be18192",
   "rollup_chain_id": "local-rollup-1",
   "deployed_address": "0x6aed4975e5b0180f54899d46e57537ce449f07de",
   "vm": "evm",

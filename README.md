@@ -2,13 +2,35 @@
 
 AI-assisted ERC-4626 vault on Initia EVM with signed keeper execution, risk-checked rebalancing, and dashboard analytics.
 
+## Quick Start
+
+```bash
+# 1. Start local Initia rollup (requires weave CLI + Docker)
+weave rollup start -d
+
+# 2. Deploy contracts
+cd contracts && cp .env.example .env
+# set PRIVATE_KEY in .env, then:
+forge script script/DeployLocal.s.sol:DeployLocal --rpc-url http://localhost:8545 --broadcast
+
+# 3. Configure frontend
+cd frontend && cp .env.local.example .env.local
+# set NEXT_PUBLIC_VAULT_MANAGER_ADDRESS from deployments.json
+
+# 4. Run
+cd frontend && npm install && npm run dev
+# Open http://localhost:3000
+```
+
+> No weave? Connect MetaMask to **Initia testnet** (Chain ID `233`, RPC `https://rpc.evm.initiation-2.initia.xyz`) and use the deployed contracts in `contracts/deployments.json`.
+
+---
+
 ## Initia Hackathon Submission
 
 - **Project Name**: Smart Yield Vaults
-
-> ⚠️ **TODO before submitting**: Record a 1–3 min demo video (Loom or YouTube Unlisted).
-> Show: Connect wallet → Bridge → Deposit → Dashboard with rebalance → Withdraw.
-> Then update `demo_video_url` in `.initia/submission.json` and do a final commit + push.
+- **Vault contract**: `0x6aed4975e5b0180f54899d46e57537ce449f07de`
+- **Native feature**: Interwoven Bridge via InterwovenKit
 
 ### Project Overview
 

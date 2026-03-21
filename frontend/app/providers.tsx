@@ -9,6 +9,7 @@ import { wagmiConfig } from '@/lib/wagmi';
 import { useEffect, useState } from 'react';
 import {
   InterwovenKitProvider,
+  InterwovenKit,
   TESTNET,
   injectStyles,
 } from '@initia/interwovenkit-react';
@@ -59,6 +60,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           customChain={chainId !== 'initiation-2' ? (customChain as any) : undefined}
         >
           {children}
+          <InterwovenKit bridge={{ srcChainId: 'initiation-2', srcDenom: bridgeDenom }} />
         </InterwovenKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

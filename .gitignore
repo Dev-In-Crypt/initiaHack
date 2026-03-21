@@ -30,6 +30,7 @@ contracts/lib/
 # Test artifacts
 frontend/test-results/
 frontend/playwright-report/
+frontend/tsconfig.tsbuildinfo
 coverage/
 
 # Logs

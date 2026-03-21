@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_DB:       vaultdb
       POSTGRES_USER:     vault
-      POSTGRES_PASSWORD: vault_secret
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_dev_only}
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./agent/db/migrations:/docker-entrypoint-initdb.d:ro
@@ -29,7 +29,7 @@ services:
         condition: service_healthy
     env_file: ./agent/.env
     environment:
-      DATABASE_URL: postgresql://vault:vault_secret@postgres:5432/vaultdb
+      DATABASE_URL: postgresql://vault:${POSTGRES_PASSWORD:-change_me_dev_only}@postgres:5432/vaultdb
     volumes:
       - ./agent:/app
       - /app/node_modules
@@ -44,7 +44,7 @@ services:
         condition: service_healthy
     env_file: ./frontend/.env.local
     environment:
-      DATABASE_URL: postgresql://vault:vault_secret@postgres:5432/vaultdb
+      DATABASE_URL: postgresql://vault:${POSTGRES_PASSWORD:-change_me_dev_only}@postgres:5432/vaultdb
     ports:
       - '3000:3000'
 

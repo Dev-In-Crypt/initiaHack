@@ -203,3 +203,4 @@ This updates `.initia/submission.json` using:
 
 - `contracts/.env` for `chain_id` and `rpc_url`
 - `contracts/deployments.json` for deployed contract addresses
+
